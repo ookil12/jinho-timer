@@ -1,10 +1,10 @@
 
 const timerContainer=document.querySelector(".js-clock"),
-timer=timerContainer.querySelector("h3");
+timer=timerContainer.querySelector("p");
 const titleContainer=document.querySelector(".js-title"),
 titlename=titleContainer.querySelector("title");
 const nameContainer=document.querySelector(".js-name"),
-titleh1=nameContainer.querySelector("h1");
+titleh1=nameContainer.querySelector("p");
 
 
 function counter(){
