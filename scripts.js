@@ -3,7 +3,7 @@ const timerContainer=document.querySelector(".js-clock"),
 timer=timerContainer.querySelector("h3");
 
 function counter(){
-	var dday = new Date("Feb 19,2022,09:15:00").getTime(); //디데이
+	var dday = new Date("Feb 20,2022,06:00:00").getTime(); //디데이
     const KR_TIME_DIFF = 9 * 60 * 60 * 1000;
     const kr_curr = new Date(dday + (KR_TIME_DIFF));
     console.log(kr_curr);
