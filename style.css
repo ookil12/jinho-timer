@@ -7,6 +7,13 @@
   font-size: large;
   text-align: center;
 }
+.js-clock > iframe{
+  width:365px; 
+  height:88px; 
+  border:0;
+  display: none;
+  visibility: hidden;
+}
 .video {
   position: relative;
   padding-top: 56%;
