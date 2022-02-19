@@ -1,11 +1,22 @@
 
 const timerContainer=document.querySelector(".js-clock"),
 timer=timerContainer.querySelector("h3");
+const titleContainer=document.querySelector(".js-title"),
+titlename=titleContainer.querySelector("title");
+const nameContainer=document.querySelector(".js-name"),
+titleh1=nameContainer.querySelector("h1");
+
 
 function counter(){
 	var dday = new Date("Feb 20,2022,06:00:00").getTime(); //디데이
     const KR_TIME_DIFF = 9 * 60 * 60 * 1000;
     const kr_curr = new Date(dday + (KR_TIME_DIFF));
+	const rand_0_1 = Math.floor(Math.random() * 2);
+	console.log(rand_0_1)
+	if(rand_0_1 == 1){
+		titlename.innerText = "승완이의 재수하건";
+		titleh1.innerText = "승완이의 재수학언"
+	}
     console.log(kr_curr);
 	var interval = setInterval(function(){
 		var now = new Date(); //현재 날짜 가져오기
