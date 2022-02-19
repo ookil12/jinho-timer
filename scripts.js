@@ -19,7 +19,32 @@ function counter(){
 		if(s < 10){
 			s = '0'+s;
 		}
-		timer.innerText =`${d}d ${h<10?`0${h}`:h}h ${m<10?`0${m}`:m}m ${s<10? `0${s}`:s}s초 남앗습니다.`;
+		if(d==0&&h<24){
+			if(h<12){
+			if(h<6){
+				if(h<3){
+					if(h<1){
+						document.body.style.backgroundColor = 'darkred';
+					}
+					else
+					document.body.style.backgroundColor = 'red';
+				}
+				else
+				document.body.style.backgroundColor = 'Salmon';
+			}
+			else
+			document.body.style.backgroundColor = 'Lightpink';
+			}
+			else
+			document.body.style.backgroundColor = 'lightyellow';
+
+		}
+		if(distance/1000 < 0){
+			timer.innerText =`지노는 재수학언애 듨어갓습니다`;
+			document.body.style.backgroundColor = 'lightgreen';
+			clearInterval(interval); 
+		}
+		else{timer.innerText =`${d}d ${h<10?`0${h}`:h}h ${m<10?`0${m}`:m}m ${s<10? `0${s}`:s}s초 남앗습니다.`;}
 	}, 1000);
 }
 counter();
