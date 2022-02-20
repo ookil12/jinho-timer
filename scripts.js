@@ -6,9 +6,9 @@ const titleContainer = document.querySelector(".js-title"),
 const nameContainer = document.querySelector(".js-name"),
   titleh1 = nameContainer.querySelector("p");
 
-function checktime(kr_curr, now, rand_0_1){
+function checktime(kr_curr, now, rand_0_1) {
   var distance = kr_curr - now;
-  let [d,h,m,s] = timeformatting(distance);
+  let [d, h, m, s] = timeformatting(distance);
   if (d == 0) {
     if (kr_curr.getDay() == now.getDay()) {
       if (h < 6) {
@@ -24,9 +24,10 @@ function checktime(kr_curr, now, rand_0_1){
     if (rand_0_1 == 1) {
       titlename.innerText = "승완이의 재수하건";
       titleh1.innerText = "승완이의 재수까지";
+    } else {
+      titlename.innerText = "지노이의 재수하건";
+      titleh1.innerText = "지노의 재수까지";
     }
-    titlename.innerText = "지노이의 재수하건";
-    titleh1.innerText = "지노의 재수까지";
     timer.innerText = `지노는 재수학언애 듨어갓습니다`;
     document.body.style.backgroundColor = "lightgreen";
     sutimer.style.visibility = "visible";
@@ -39,12 +40,12 @@ function checktime(kr_curr, now, rand_0_1){
     return false;
   }
 }
-function timeformatting(distance){
+function timeformatting(distance) {
   var d = Math.floor(distance / (1000 * 60 * 60 * 24));
   var h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var s = Math.floor((distance % (1000 * 60)) / 1000);
-  return [d,h,m,s];
+  return [d, h, m, s];
 }
 function counter() {
   var dday = new Date("Feb 20,2022,06:00:00").getTime(); //디데이
@@ -58,19 +59,19 @@ function counter() {
     titleh1.innerText = "승완이의 재수학언";
   }
   console.log(kr_curr);
-  checktime(kr_curr,now);
+  checktime(kr_curr, now, rand_0_1);
   var interval = setInterval(function () {
     now = new Date(); //현재 날짜 가져오기
     console.log(now);
     var distance = kr_curr - now;
-    let [d,h,m,s] = timeformatting(distance);
+    let [d, h, m, s] = timeformatting(distance);
     console.log(distance);
     if (s < 10) {
       s = "0" + s;
     }
-    if(checktime(kr_curr,now, rand_0_1)){
+    if (checktime(kr_curr, now, rand_0_1)) {
       clearInterval(interval);
     }
   }, 1000);
 }
-window.onload=counter();
+window.onload = counter();
