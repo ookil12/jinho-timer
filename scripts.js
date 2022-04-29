@@ -51,6 +51,7 @@ function counter() {
   var dday = new Date("May 01,2022,08:00:00").getTime(); //디데이
   const KR_TIME_DIFF = 9 * 60 * 60 * 1000;
   const kr_curr = new Date(dday + KR_TIME_DIFF);
+  console.log(kr_curr);
   const rand_0_1 = Math.floor(Math.random() * 2);
   var now = new Date();
   console.log(rand_0_1);
